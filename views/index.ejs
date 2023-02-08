@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/styles.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+    <title>Document</title>
+</head>
+<body class="container-fluid">
+    <div class="container card-body bg-white shadow rounded">
+      <div class="card-title bg-success">
+        <h3 class="text-center text-white">Upload to Gallery</h3>
+      </div>
+        <form enctype="multipart/form-data" action="upload" method="post" class="card-body shadow bg-light mt-5">
+            
+            <div class="form-group">
+              <label for="" class="form-label">Image</label>
+              <input required type="file" name="image"  class="form-control w-50" placeholder="" aria-describedby="helpId">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info mt-2 w-25 justify-content-center">Upload</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <% images.forEach(function(image){ %>
+          <div class="col-md-4 col-lg-4 col-sm-1 mt-2">
+            <a href="/image/<%= image._id %>"><img src="<%= image.path %>" class="w-100 h-75" alt="<%= image.name %>"></a>
+           <div class="text-center mt-1"> 
+            <a href="/image/<%= image._id %>" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i></a>
+          </div>
+          </div>
+        <% }); %> 
+      </div>
+</body>
+</html>
