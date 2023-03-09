@@ -10,5 +10,5 @@ A web app to upload and add more details about your photos
 4. Then contribute by creating a pull request and i will be happy to merge
 
 
-##Contacts information here
+##Contacts
 Contributor [email](mailto:franciskinyuru26@gmail.com)
