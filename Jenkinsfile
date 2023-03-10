@@ -20,13 +20,13 @@ pipeline{
                sh '''
                npm install
                '''            
-                
+
             }
         }
         
         stage('end'){
             steps{
-                echo 'end build'
+                echo 'end of build'
             }
         }
     }
